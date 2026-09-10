@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#050807">
+  <title>対戦記録｜POOL NOTE</title>
+  <style>
+    :root{--bg:#050807;--panel:#0c1210;--panel2:#111a16;--green:#18d47b;--green2:#0a8f54;--text:#f4f7f5;--muted:#9baaa2;--line:#203129;--danger:#ff6b76}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif}button,input,select,textarea{font:inherit}button,a{touch-action:manipulation}a{color:inherit;text-decoration:none}.wrap{width:min(1080px,calc(100% - 28px));margin:auto}.header{position:sticky;top:0;z-index:20;background:rgba(5,8,7,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.head{height:68px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:950;letter-spacing:.12em}.brand i{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--green);box-shadow:0 0 18px var(--green);margin-right:9px}.menu-btn,.ghost,.danger{border:1px solid #2c4438;background:#0d1511;color:#fff;border-radius:10px;padding:10px 14px;font-weight:800;cursor:pointer}.nav{position:fixed;right:14px;top:76px;width:min(330px,calc(100% - 28px));display:none;background:#0c1310;border:1px solid #294237;border-radius:18px;padding:12px;box-shadow:0 24px 60px #000;z-index:30}.nav.open{display:block}.nav a{display:flex;justify-content:space-between;padding:14px;border-radius:10px;color:#dce6e1}.nav a:hover,.nav a.current{background:#142019;color:var(--green)}main{padding:55px 0 90px}.eyebrow{color:var(--green);font-weight:900;letter-spacing:.18em;font-size:.74rem}.title-row{display:flex;justify-content:space-between;gap:24px;align-items:end;margin-bottom:30px}.title-row h1{font-size:clamp(2.4rem,7vw,4.8rem);letter-spacing:-.06em;line-height:1;margin:12px 0}.title-row p{color:var(--muted);line-height:1.7;max-width:440px}.panel{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:24px;margin-bottom:22px}.panel h2{margin:0 0 20px;font-size:1.25rem}.form-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.field{display:flex;flex-direction:column;gap:7px}.field.w2{grid-column:span 2}.field.w4{grid-column:1/-1}.field label{font-size:.78rem;color:#aec0b7;font-weight:800}.field input,.field select,.field textarea{width:100%;background:#080d0b;color:#fff;border:1px solid #2a4035;border-radius:10px;padding:12px;outline:none}.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(24,212,123,.1)}.field textarea{min-height:92px;resize:vertical}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.primary{border:0;background:var(--green);color:#031109;border-radius:10px;padding:13px 20px;font-weight:950;cursor:pointer}.danger{border-color:#5b2b31;color:#ffadb4}.toolbar{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-bottom:16px}.toolbar-actions{display:flex;gap:9px;flex-wrap:wrap}.summary{display:flex;gap:20px;flex-wrap:wrap;color:var(--muted);font-size:.88rem}.summary strong{color:#fff;font-size:1.05rem}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:14px}table{width:100%;border-collapse:collapse;min-width:920px;background:#090e0c}th,td{padding:13px 12px;text-align:left;border-bottom:1px solid #1b2a23;font-size:.84rem;vertical-align:top}th{position:sticky;top:0;background:#111a16;color:#9fb2a8;font-size:.72rem;letter-spacing:.04em}td.memo{max-width:240px;white-space:pre-wrap}.badge{display:inline-block;padding:5px 9px;border-radius:20px;font-size:.72rem;font-weight:900}.win{background:rgba(24,212,123,.14);color:var(--green)}.loss{background:rgba(255,107,118,.13);color:#ff929b}.draw{background:#202b26;color:#c7d1cc}.row-buttons{display:flex;gap:7px}.mini{border:1px solid #2b4438;background:#121d17;color:#fff;border-radius:8px;padding:7px 9px;cursor:pointer}.empty{text-align:center;padding:45px 15px;color:#82958b}.notice{display:none;margin-top:13px;color:var(--green);font-size:.86rem}.notice.show{display:block}.footnote{color:#7f9188;font-size:.78rem;line-height:1.7;margin-top:14px}@media(max-width:760px){main{padding-top:34px}.title-row{display:block}.panel{padding:18px}.form-grid{grid-template-columns:1fr 1fr}.field.w2{grid-column:span 2}.toolbar{align-items:flex-start;flex-direction:column}.summary{gap:12px}.title-row h1{font-size:3rem}}@media(max-width:430px){.form-grid{grid-template-columns:1fr}.field.w2,.field.w4{grid-column:1}.actions>*{flex:1}.toolbar-actions{width:100%}.toolbar-actions>*{flex:1}}
+  </style>
+</head>
+<body>
+  <header class="header"><div class="wrap head"><a class="brand" href="./"><i></i>POOL NOTE</a><button class="menu-btn" id="menuBtn">☰ MENU</button></div></header>
+  <nav class="nav" id="nav"><a href="./">ホーム <span>01</span></a><a href="https://waraka2026.github.io/billiards-layout/">配置図メーカー <span>02</span></a><a class="current" href="match-records.html">対戦記録 <span>03</span></a><a href="./#screens">平場スコア <span>04</span></a></nav>
+  <main><div class="wrap">
+    <div class="title-row"><div><div class="eyebrow">MATCH RECORD</div><h1>対戦記録</h1></div><p>大会や対戦の結果を記録して、あとから一覧で振り返れます。配置図とは連携しない独立した記録です。</p></div>
+    <section class="panel"><h2 id="formTitle">新しい記録を追加</h2>
+      <form id="recordForm"><input type="hidden" id="editId">
+        <div class="form-grid">
+          <div class="field w2"><label for="eventName">大会名・イベント名 *</label><input id="eventName" required placeholder="例：ノラモスカップ"></div>
+          <div class="field"><label for="playedAt">開催日時 *</label><input id="playedAt" type="datetime-local" required></div>
+          <div class="field"><label for="venue">会場</label><input id="venue" placeholder="例：NORA"></div>
+          <div class="field"><label for="eventResult">大会結果</label><input id="eventResult" placeholder="例：準優勝"></div>
+          <div class="field"><label for="opponent">対戦相手 *</label><input id="opponent" required placeholder="名前・ニックネーム"></div>
+          <div class="field"><label for="result">勝敗 *</label><select id="result" required><option value="勝ち">勝ち</option><option value="負け">負け</option><option value="引き分け">引き分け</option></select></div>
+          <div class="field"><label for="entryFee">エントリーフィー（円）</label><input id="entryFee" type="number" min="0" step="1" inputmode="numeric" placeholder="0"></div>
+          <div class="field"><label for="myScore">自分のスコア</label><input id="myScore" type="number" min="0" inputmode="numeric" placeholder="0"></div>
+          <div class="field"><label for="opponentScore">相手のスコア</label><input id="opponentScore" type="number" min="0" inputmode="numeric" placeholder="0"></div>
+          <div class="field w4"><label for="memo">メモ</label><textarea id="memo" placeholder="良かった点、反省点、次に試したいことなど"></textarea></div>
+        </div>
+        <div class="actions"><button class="primary" type="submit" id="saveBtn">記録を保存</button><button class="ghost" type="button" id="cancelBtn" hidden>編集をやめる</button></div><div class="notice" id="notice" role="status"></div>
+      </form>
+    </section>
+    <section class="panel"><div class="toolbar"><div><h2>記録一覧</h2><div class="summary"><span>対戦 <strong id="totalCount">0</strong>件</span><span>勝利 <strong id="winCount">0</strong>件</span><span>参加費合計 <strong id="feeTotal">¥0</strong></span></div></div><div class="toolbar-actions"><button class="ghost" id="csvBtn" type="button">CSVで出力</button></div></div>
+      <div id="list"></div><p class="footnote">記録はこの端末のブラウザ内に保存されます。ブラウザのデータを削除すると消えるため、必要に応じてCSVを保存してください。</p>
+    </section>
+  </div></main>
+  <script>
+    const KEY='poolNoteMatchRecordsV1';
+    const $=id=>document.getElementById(id);
+    const form=$('recordForm'),notice=$('notice'),nav=$('nav'),menuBtn=$('menuBtn');
+    const fields=['eventName','playedAt','venue','eventResult','opponent','result','entryFee','myScore','opponentScore','memo'];
+    let records=load();
+    menuBtn.onclick=()=>nav.classList.toggle('open');
+    nav.querySelectorAll('a').forEach(a=>a.onclick=()=>nav.classList.remove('open'));
+    document.addEventListener('click',e=>{if(!nav.contains(e.target)&&!menuBtn.contains(e.target))nav.classList.remove('open')});
+    function load(){try{return JSON.parse(localStorage.getItem(KEY))||[]}catch{return[]}}
+    function persist(){localStorage.setItem(KEY,JSON.stringify(records))}
+    function esc(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+    function yen(v){return new Intl.NumberFormat('ja-JP',{style:'currency',currency:'JPY',maximumFractionDigits:0}).format(Number(v)||0)}
+    function dateText(v){if(!v)return'';const d=new Date(v);return Number.isNaN(d.getTime())?v:new Intl.DateTimeFormat('ja-JP',{year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'}).format(d)}
+    function flash(msg){notice.textContent=msg;notice.classList.add('show');setTimeout(()=>notice.classList.remove('show'),2400)}
+    function render(){
+      const sorted=[...records].sort((a,b)=>String(b.playedAt).localeCompare(String(a.playedAt)));
+      $('totalCount').textContent=records.length;$('winCount').textContent=records.filter(r=>r.result==='勝ち').length;$('feeTotal').textContent=yen(records.reduce((s,r)=>s+(Number(r.entryFee)||0),0));
+      if(!sorted.length){$('list').innerHTML='<div class="empty">まだ対戦記録がありません。</div>';return}
+      $('list').innerHTML='<div class="table-wrap"><table><thead><tr><th>日時</th><th>大会名</th><th>会場</th><th>大会結果</th><th>対戦相手</th><th>スコア</th><th>勝敗</th><th>参加費</th><th>メモ</th><th>操作</th></tr></thead><tbody>'+sorted.map(r=>`<tr><td>${esc(dateText(r.playedAt))}</td><td><b>${esc(r.eventName)}</b></td><td>${esc(r.venue)}</td><td>${esc(r.eventResult)}</td><td>${esc(r.opponent)}</td><td>${esc(r.myScore)} - ${esc(r.opponentScore)}</td><td><span class="badge ${r.result==='勝ち'?'win':r.result==='負け'?'loss':'draw'}">${esc(r.result)}</span></td><td>${esc(yen(r.entryFee))}</td><td class="memo">${esc(r.memo)}</td><td><div class="row-buttons"><button class="mini" onclick="editRecord('${r.id}')">編集</button><button class="mini" onclick="deleteRecord('${r.id}')">削除</button></div></td></tr>`).join('')+'</tbody></table></div>';
+    }
+    form.addEventListener('submit',e=>{e.preventDefault();const data=Object.fromEntries(fields.map(k=>[k,$(k).value.trim()]));const id=$('editId').value;if(id){records=records.map(r=>r.id===id?{...r,...data,updatedAt:new Date().toISOString()}:r);flash('記録を更新しました')}else{records.push({id:String(Date.now())+Math.random().toString(16).slice(2),...data,createdAt:new Date().toISOString()});flash('記録を保存しました')}persist();resetForm();render()});
+    window.editRecord=id=>{const r=records.find(x=>x.id===id);if(!r)return;$('editId').value=id;fields.forEach(k=>$(k).value=r[k]??'');$('formTitle').textContent='記録を編集';$('saveBtn').textContent='変更を保存';$('cancelBtn').hidden=false;scrollTo({top:0,behavior:'smooth'})};
+    window.deleteRecord=id=>{if(!confirm('この対戦記録を削除しますか？'))return;records=records.filter(r=>r.id!==id);persist();render();flash('記録を削除しました')};
+    function resetForm(){form.reset();$('editId').value='';$('formTitle').textContent='新しい記録を追加';$('saveBtn').textContent='記録を保存';$('cancelBtn').hidden=true}
+    $('cancelBtn').onclick=resetForm;
+    $('csvBtn').onclick=()=>{if(!records.length){flash('出力する記録がありません');return}const heads=['開催日時','大会名・イベント名','会場','大会結果','対戦相手','自分のスコア','相手のスコア','勝敗','エントリーフィー（円）','メモ'];const vals=r=>[r.playedAt,r.eventName,r.venue,r.eventResult,r.opponent,r.myScore,r.opponentScore,r.result,r.entryFee,r.memo];const q=v=>'"'+String(v??'').replace(/"/g,'""')+'"';const csv='\ufeff'+[heads,...[...records].sort((a,b)=>String(b.playedAt).localeCompare(String(a.playedAt))).map(vals)].map(row=>row.map(q).join(',')).join('\r\n');const blob=new Blob([csv],{type:'text/csv;charset=utf-8'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='pool-note-match-records-'+new Date().toISOString().slice(0,10)+'.csv';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)};
+    render();
+  </script>
+</body>
+</html>
