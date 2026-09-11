@@ -17,12 +17,12 @@
     <section class="panel"><h2 id="formTitle">新しい記録を追加</h2>
       <form id="recordForm"><input type="hidden" id="editId">
         <div class="form-grid">
-          <div class="field w2"><label for="eventName">大会名・イベント名 *</label><input id="eventName" required placeholder="例：ノラモスカップ"></div>
-          <div class="field"><label for="playedAt">開催日時 *</label><input id="playedAt" type="datetime-local" required></div>
-          <div class="field"><label for="venue">会場</label><input id="venue" placeholder="例：NORA"></div>
+          <div class="field w2"><label for="eventName">大会名・イベント名</label><input id="eventName" list="eventNameOptions" autocomplete="off" placeholder="入力または過去の候補から選択"><datalist id="eventNameOptions"></datalist></div>
+          <div class="field"><label for="playedAt">開催日時</label><input id="playedAt" type="datetime-local"></div>
+          <div class="field"><label for="venue">会場名</label><input id="venue" list="venueOptions" autocomplete="off" placeholder="入力または過去の候補から選択"><datalist id="venueOptions"></datalist></div>
           <div class="field"><label for="eventResult">大会結果</label><input id="eventResult" placeholder="例：準優勝"></div>
-          <div class="field"><label for="opponent">対戦相手 *</label><input id="opponent" required placeholder="名前・ニックネーム"></div>
-          <div class="field"><label for="result">勝敗 *</label><select id="result" required><option value="勝ち">勝ち</option><option value="負け">負け</option><option value="引き分け">引き分け</option></select></div>
+          <div class="field"><label for="opponent">対戦相手</label><input id="opponent" placeholder="名前・ニックネーム"></div>
+          <div class="field"><label for="result">勝敗</label><select id="result"><option value="">未選択</option><option value="勝ち">勝ち</option><option value="負け">負け</option><option value="引き分け">引き分け</option></select></div>
           <div class="field"><label for="entryFee">エントリーフィー（円）</label><input id="entryFee" type="number" min="0" step="1" inputmode="numeric" placeholder="0"></div>
           <div class="field"><label for="myScore">自分のスコア</label><input id="myScore" type="number" min="0" inputmode="numeric" placeholder="0"></div>
           <div class="field"><label for="opponentScore">相手のスコア</label><input id="opponentScore" type="number" min="0" inputmode="numeric" placeholder="0"></div>
@@ -49,8 +49,14 @@
     function esc(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
     function yen(v){return new Intl.NumberFormat('ja-JP',{style:'currency',currency:'JPY',maximumFractionDigits:0}).format(Number(v)||0)}
     function dateText(v){if(!v)return'';const d=new Date(v);return Number.isNaN(d.getTime())?v:new Intl.DateTimeFormat('ja-JP',{year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'}).format(d)}
+    function renderChoices(){
+      const choices=(key)=>[...new Set(records.map(r=>String(r[key]??'').trim()).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'ja'));
+      $('eventNameOptions').innerHTML=choices('eventName').map(v=>`<option value="${esc(v)}"></option>`).join('');
+      $('venueOptions').innerHTML=choices('venue').map(v=>`<option value="${esc(v)}"></option>`).join('');
+    }
     function flash(msg){notice.textContent=msg;notice.classList.add('show');setTimeout(()=>notice.classList.remove('show'),2400)}
     function render(){
+      renderChoices();
       const sorted=[...records].sort((a,b)=>String(b.playedAt).localeCompare(String(a.playedAt)));
       $('totalCount').textContent=records.length;$('winCount').textContent=records.filter(r=>r.result==='勝ち').length;$('feeTotal').textContent=yen(records.reduce((s,r)=>s+(Number(r.entryFee)||0),0));
       if(!sorted.length){$('list').innerHTML='<div class="empty">まだ対戦記録がありません。</div>';return}
